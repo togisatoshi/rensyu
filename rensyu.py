@@ -1,10 +1,14 @@
-
 import streamlit as st
 from PIL import Image
 
-st.sidebar.write('頭蓋骨のデッサンindex')
-
+image = Image.open('logo.png')
+st.image(image, use_column_width=True)
+st.sidebar.title('頭蓋骨のデッサンindex')
 st.title('頭蓋骨のデッサン')
+
+link = '(https://x6ud.github.io/)'
+st.markdown(link, unsafe_allow_html=True)
+
 if st.sidebar.checkbox('頭蓋骨を描く―動画'):
     video_file = open('zugai.MP4', 'rb')
     video_bytes = video_file.read()
