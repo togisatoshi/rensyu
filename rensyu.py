@@ -6,7 +6,7 @@ st.sidebar.write('頭蓋骨のデッサンindex')
 
 st.title('頭蓋骨のデッサン')
 if st.sidebar.checkbox('頭蓋骨を描く―動画'):
-    video_file = open('zugai.mp4', 'rb')
+    video_file = open('zugai.MP4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
