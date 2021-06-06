@@ -9,33 +9,45 @@ st.title('頭蓋骨のデッサン')
 link = '(https://x6ud.github.io/)'
 st.markdown(link, unsafe_allow_html=True)
 
-if st.sidebar.checkbox('頭蓋骨を描く―動画'):
+tit = ['いろいろな角度の頭蓋骨',
+    '頭蓋骨の描き方',
+    '頭蓋骨の構造１',
+    '頭蓋骨の構造2',
+    '頭蓋骨演習1',
+    '頭蓋骨演習2']
+gazo =['z1.jpg',
+    'z2.jpg',
+    'z5.jpg',
+    'z6.jpg',
+    'z3.jpg',
+    'z4.jpg']
+kaisetu =['''描く前に立体的な頭蓋骨のイメージをイメージしましょう。
+写すことよりも構造的な形を理解することがもっとも大切です。''',
+'''色、形等バランスを見ながら描き進めていきましょう、
+途中で形がおかしいなと感じたら積極的に直しながら描いていきましょう''',
+'''まずはシンプルなベースとなる形を観察しましょう頭蓋骨の場合は
+卵の形と三角形の立体(正四面体)の組み合わせがベースの形になります。''',
+'''シンプルなベースの形を削ったり部品を付け足すイメージで細部を造っていきます。''',
+'''頭蓋骨演習1、
+画像をダウンロードしてプリント
+アウトして上から描いてみよう''',
+'''頭蓋骨演習2、
+画像をダウンロードしてプリント
+アウトして上から描いてみよう''']
+
+if st.sidebar.checkbox('頭蓋骨のデッサン(動画）'):
     video_file = open('zugai.MP4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
-if st.sidebar.checkbox('いろいろな角度の頭蓋骨'):
-    image = Image.open('z1.jpg')
-    st.image(image, caption='いろいろな角度の頭蓋骨', use_column_width=True)
-    st.write('''描く前に立体的な頭蓋骨のイメージをイメージしましょう。
-    写すことよりも構造的な形を理解することがもっとも大切です。''')
 
-if st.sidebar.checkbox('頭蓋骨の描き方'):
-    image = Image.open('z2.jpg')
-    st.image(image, caption='頭蓋骨の描き方', use_column_width=True)
-    st.write('''色、形等バランスを見ながら描き進めていきましょう、
-    途中で形がおかしいなと感じたら積極的に直しながら描いていきましょう''')
 
-if st.sidebar.checkbox('頭蓋骨演習1'):
-    image = Image.open('z3.jpg')
-    st.image(image, caption='頭蓋骨演習1', use_column_width=True)
-    st.write('''頭蓋骨演習1、
-画像をダウンロードしてプリント
-アウトして上から描いてみよう''')
+def gazou_kai(tit,gazo,kaisetu):
+    if st.sidebar.checkbox(tit):
+        image = Image.open(gazo)
+        st.image(image, caption='頭蓋骨演習2', use_column_width=True)
+        st.write(kaisetu)
+        return
+for i in range(6):
+    gazou_kai(tit[i],gazo[i],kaisetu[i])
 
-if st.sidebar.checkbox('頭蓋骨演習2'):
-    image = Image.open('z4.jpg')
-    st.image(image, caption='頭蓋骨演習2', use_column_width=True)
-    st.write('''頭蓋骨演習2、
-画像をダウンロードしてプリント
-アウトして上から描いてみよう''')
