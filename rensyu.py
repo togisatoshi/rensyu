@@ -15,12 +15,14 @@ tit = ['いろいろな角度の頭蓋骨',
     '頭蓋骨の構造2',
     '頭蓋骨演習1',
     '頭蓋骨演習2']
+
 gazo =['z1.jpg',
     'z2.jpg',
     'z5.jpg',
     'z6.jpg',
     'z3.jpg',
     'z4.jpg']
+
 kaisetu =['''描く前に立体的な頭蓋骨のイメージをイメージしましょう。
 写すことよりも構造的な形を理解することがもっとも大切です。''',
 '''色、形等バランスを見ながら描き進めていきましょう、
@@ -40,12 +42,10 @@ if st.sidebar.checkbox('頭蓋骨のデッサン(動画）'):
     video_bytes = video_file.read()
     st.video(video_bytes)
 
-
-
 def gazou_kai(tit,gazo,kaisetu):
     if st.sidebar.checkbox(tit):
         image = Image.open(gazo)
-        st.image(image, caption='頭蓋骨演習2', use_column_width=True)
+        st.image(image, caption= tit, use_column_width=True)
         st.write(kaisetu)
         return
 for i in range(6):
