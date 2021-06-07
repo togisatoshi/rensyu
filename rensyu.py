@@ -37,6 +37,14 @@ kaisetu =['''描く前に立体的な頭蓋骨のイメージをイメージし�
 画像をダウンロードしてプリント
 アウトして上から描いてみよう''']
 
+zugai = st.select_slider(
+     '頭蓋骨のデッサン',
+     options=['zug1.jpg', 'zug2.jpg','zug3.jpg','zug4.jpg','zug5.jpg','zug6.jpg','zug7.jpg',
+     'zug8.jpg','zug9.jpg','zug10.jpg','zug10.jpg'])
+image = Image.open(zugai)
+st.image(image, caption='頭蓋骨のデッサン')
+
+
 if st.sidebar.checkbox('頭蓋骨のデッサン(動画）'):
     video_file = open('zugai.MP4', 'rb')
     video_bytes = video_file.read()
